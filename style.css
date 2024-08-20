@@ -4,7 +4,18 @@ body {
 }
 
 /* Component */
+.wrapper_top {
+    background-color: #6230A2;
+}
+
+.wrapper_bottom {
+    background-color: #FFF5ED;
+}
+
 .wrapper {
     box-shadow: inset 0 0 10px red;
     height: 50vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
