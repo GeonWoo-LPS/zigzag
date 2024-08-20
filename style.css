@@ -119,8 +119,7 @@ img {
     position: relative;
 }
 
-.card-img::before {
-    content: 'Rest';
+.card-img div {
     color: white;
     font-size: 32px;
     font-weight: 500;
