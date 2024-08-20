@@ -119,18 +119,22 @@ img {
     position: relative;
 }
 
-.card-img img {
-    width: 280px;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-img div {
+.card-img::before {
+    content: 'Rest';
     color: white;
     font-size: 32px;
     font-weight: 500;
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-img img {
+    width: 280px;
+    height: 100%;
+    object-fit: cover;
+    
 }
 
 .card-text h2 {
