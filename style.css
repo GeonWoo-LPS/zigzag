@@ -3,10 +3,21 @@ body, p {
     margin: unset;
 }
 
-h1 {
+h1, h2 {
     margin: unset;
     font-size: unset;
     font-weight: unset;
+}
+
+ul {
+    margin: unset;
+    padding: unset;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
 }
 
 /* Typography */
@@ -29,23 +40,25 @@ h1 {
     display: grid;
     justify-content: center;
     align-content: center;
-    padding: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0 , 1080px);
 }
 
 .contents {
     box-shadow: inset 0 0 10px blue;
-    max-width: 1080px;
 }
 
 .contents_header {
     display: flex;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .contents_header h1 {
     font-size: 40px;
     line-height: 1.1em;
-    width: 258px;
+    max-width: 258px;
     color: white;
 }
 
@@ -82,8 +95,32 @@ h1 {
 }
 
 .contents_header p {
-    width: 460px;
+    max-width: 460px;
     color: #C89DFF;
     font-size: 14px;
     line-height: 1.6em;
+    /* margin-right: 218px; */
+}
+
+.card_wrapper {
+    box-shadow: inset 0 0 10px green;
+
+    display: grid;
+    row-gap: 30px;
+    grid-template-rows: repeat( 3, 148px);
+}
+
+.card {
+    background-color: white;
+    display: flex;
+}
+
+.card img {
+    width: 280px;
+    height: 148px;
+    object-fit: cover;
+}
+
+.card div {
+    padding: ;
 }
