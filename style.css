@@ -17,7 +17,7 @@ ul {
 
 img {
     max-width: 100%;
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 /* Typography */
@@ -25,13 +25,9 @@ img {
     font-family: 'montserrat';
 }
 
-/* Component */
+/* Component top */
 .wrapper_top {
     background-color: #6230A2;
-}
-
-.wrapper_bottom {
-    background-color: #FFF5ED;
 }
 
 .wrapper {
@@ -45,7 +41,7 @@ img {
     grid-template-columns: minmax(0 , 1080px);
 }
 
-.contents {
+.contents_top {
     box-shadow: inset 0 0 10px blue;
 }
 
@@ -58,7 +54,6 @@ img {
 .contents_header h1 {
     font-size: 40px;
     line-height: 1.1em;
-    max-width: 258px;
     color: white;
 }
 
@@ -107,13 +102,13 @@ img {
 
     display: grid;
     row-gap: 30px;
-    grid-template-rows: repeat( 3, minmax( 0, 1fr ));
+    grid-template-rows: repeat( auto-fit, minmax( 0 , 1fr ));
 }
-
 
 .card {
     background-color: white;
     display: flex;
+    align-items: center;
 }
 
 .card:nth-child(2) {
@@ -123,6 +118,8 @@ img {
 
 .card-img {
     position: relative;
+    width: 280px;
+    height: 100%;
 }
 
 .img-back {
@@ -134,7 +131,7 @@ img {
     left: 0;
 }
 
-.img-back h2 {
+.card-img h2 {
     color: white;
     font-size: 32px;
     font-weight: 500;
@@ -145,7 +142,7 @@ img {
 }
 
 .card-img img {
-    width: 280px;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -158,7 +155,7 @@ img {
 }
 
 .card-text ul {
-    margin: 14px 0 21px 22px;
+    margin: 14px 0 18px 22px;
 }
 
 .card-text ul li {
@@ -166,6 +163,7 @@ img {
     align-items: center;
     font-size: 14px;
     color: #111111;
+    list-style: disc;
 }
 
 .card-text ul li + li {
@@ -182,7 +180,155 @@ img {
     margin-right: 14px;
 }
 
+/* Component bottom */
+.wrapper_bottom {
+    background-color: #FFF5ED;
+}
+
+.contents_bottom .contents_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+
+.contents_bottom .contents_header h1 {
+    font-size: 40px;
+    color: #F98173;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+
+.contents_bottom.contents_header h1 strong {
+    position: relative;
+    z-index: 0;
+}
+
+
+.contents_bottom .contents_header h1 strong::after {
+    content: '';
+    background-color: white;
+    display: block;
+    width: 296px;
+    height: 26px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.add_btn {
+    font-family: 'montserrat';
+    font-weight: bold;
+    color: white;
+    background-color: #ff4500;
+    width: 208px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 14px;
+    border-radius: 4px;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.contents_list {
+    background-color: white;
+    /* height: 593px; */
+}
+
+.list_img {
+    width: 100%;
+}
+
+.list_img img {
+    width: 100%;
+    border-bottom: 4px solid #111111;
+}
+
+.list_main {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 270px;
+    box-sizing: border-box;
+}
+
+.list_tag {
+    display: flex;
+    gap: 4px;
+    margin-top: 20px;
+}
+
+.list_tag li {
+    font-size: 14px;
+    font-weight: 600;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 12px;
+    border-radius: 12px;
+    color: #6230A2;
+    background-color: #EBDBFF;
+}
+
+.list_title {
+    color: #111111;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.list_text {
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.6;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.list_footer::before {
+    content: '';
+    display: block;
+    width: 320px;
+    height: 4px;
+    background-color: #eeeeee;
+    margin: 20px 0 0 20px
+}
+
+.list_footer {
+    color: #999999;
+    font-size: 14px;
+}
+
+.footer_contents {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.footer_text {
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 38px;
+    line-height: 38px;
+}
+
+.footer_icon img {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: -14px;
+}
+
+
+/* Tablet */
 @media ( max-width: 1024px ) {
+
+    .contents_header {
+        margin-bottom: 50px;
+    }
+
     .card_wrapper {
         gap: 30px;
         grid-template-columns: repeat( 2, minmax( 0, 1fr ));
