@@ -20,6 +20,11 @@ img {
     vertical-align: bottom;
 }
 
+button {
+    background-color: unset;
+    border: unset;
+}
+
 /* Typography */
 :root {
     font-family: 'montserrat';
@@ -105,24 +110,24 @@ img {
     grid-template-rows: repeat( auto-fit, minmax( 0 , 1fr ));
 }
 
-.card {
+.card_top {
     background-color: white;
     display: flex;
     align-items: center;
 }
 
-.card:nth-child(2) {
+.card_top:nth-child(2) {
     flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-.card-img {
+.card_img {
     position: relative;
     width: 280px;
     height: 100%;
 }
 
-.img-back {
+.img_back {
     background-color: rgba(98, 48, 162, 0.5);
     width: 100%;
     height: 100%;
@@ -131,7 +136,7 @@ img {
     left: 0;
 }
 
-.card-img h2 {
+.card_img h2 {
     color: white;
     font-size: 32px;
     font-weight: 500;
@@ -141,36 +146,35 @@ img {
     transform: translate(-50%, -50%);
 }
 
-.card-img img {
+.card_img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.card-text h2 {
+.card_text h2 {
     color: #6230A2;
     font-size: 18px;
     font-weight: bold;
     margin: 16px 0 0 21px;
 }
 
-.card-text ul {
+.card_text ul {
     margin: 14px 0 18px 22px;
 }
 
-.card-text ul li {
+.card_text ul li {
     display: flex;
     align-items: center;
     font-size: 14px;
     color: #111111;
-    list-style: disc;
 }
 
-.card-text ul li + li {
+.card_text ul li + li {
     margin-top: 12px;
 }
 
-.card-text ul li::before {
+.card_text ul li::before {
     content: '';
     display: block;
     width: 10px;
@@ -232,21 +236,28 @@ img {
 }
 
 
-.contents_list {
+.contents_bottom .card_wrapper {
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    gap: 30px;
+}
+
+.card_bottom {
     background-color: white;
-    /* height: 593px; */
+
 }
 
-.list_img {
+.card_bottom .card_img {
     width: 100%;
+    height: 255px;
 }
 
-.list_img img {
+.card_bottom .card_img img {
     width: 100%;
     border-bottom: 4px solid #111111;
 }
 
-.list_main {
+.card_main {
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -255,13 +266,13 @@ img {
     box-sizing: border-box;
 }
 
-.list_tag {
+.card_tag {
     display: flex;
     gap: 4px;
     margin-top: 20px;
 }
 
-.list_tag li {
+.card_tag li {
     font-size: 14px;
     font-weight: 600;
     height: 22px;
@@ -272,13 +283,13 @@ img {
     background-color: #EBDBFF;
 }
 
-.list_title {
+.card_title {
     color: #111111;
     font-size: 24px;
     font-weight: bold;
 }
 
-.list_text {
+.card_text {
     color: #333333;
     font-size: 14px;
     line-height: 1.6;
@@ -286,7 +297,7 @@ img {
     flex-grow: 1;
 }
 
-.list_footer::before {
+.card_footer::before {
     content: '';
     display: block;
     width: 320px;
@@ -295,7 +306,7 @@ img {
     margin: 20px 0 0 20px
 }
 
-.list_footer {
+.card_footer {
     color: #999999;
     font-size: 14px;
 }
@@ -329,26 +340,31 @@ img {
         margin-bottom: 50px;
     }
 
-    .card_wrapper {
+    .card_wrapper, .contents_bottom .card_wrapper {
         gap: 30px;
         grid-template-columns: repeat( 2, minmax( 0, 1fr ));
         grid-template-rows: repeat( auto-fit, minmax( 0, 1fr ));
     }
 
-    .card {
+    .card_top {
         flex-direction: column;
     }
 
-    .card:nth-child(2) {
+    .card_top:nth-child(2) {
         display: flex;
         flex-direction: column;
     }
 
-    .card-img img {
+    .card_img {
         width: 100%;
+        height: 255px;
     }
 
-    .card-text ul {
-        margin: 14px 21px 21px 22px;
+    .card_text ul {
+        margin: 21px;
+    }
+
+    .card_text ul li::before {
+        display: none;
     }
 }
