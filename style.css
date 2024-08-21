@@ -36,7 +36,6 @@ button {
 }
 
 .wrapper {
-    box-shadow: inset 0 0 10px red;
     min-height: 50vh;
     display: grid;
     justify-content: center;
@@ -44,10 +43,6 @@ button {
     padding: 40px;
     box-sizing: border-box;
     grid-template-columns: minmax(0 , 1080px);
-}
-
-.contents_top {
-    box-shadow: inset 0 0 10px blue;
 }
 
 .contents_header {
@@ -103,8 +98,6 @@ button {
 }
 
 .card_wrapper {
-    box-shadow: inset 0 0 10px green;
-
     display: grid;
     row-gap: 30px;
     grid-template-rows: repeat( auto-fit, minmax( 0 , 1fr ));
@@ -189,6 +182,10 @@ button {
     background-color: #FFF5ED;
 }
 
+.contents_bottom {
+    max-width: 1080px;
+}
+
 .contents_bottom .contents_header {
     display: flex;
     align-items: center;
@@ -238,7 +235,7 @@ button {
 
 .contents_bottom .card_wrapper {
     display: grid;
-    grid-template-columns: repeat( 3, 1fr);
+    grid-template-columns: repeat( 3, minmax( 0, 1fr ));
     gap: 30px;
 }
 
@@ -250,11 +247,21 @@ button {
 .card_bottom .card_img {
     width: 100%;
     height: 255px;
+    position: relative;
 }
 
 .card_bottom .card_img img {
     width: 100%;
     border-bottom: 4px solid #111111;
+}
+
+.card_img img.ribbon {
+    width: 110px;
+    height: 110px;
+    border-bottom: none;
+    position: absolute;
+    top: -10px;
+    left: -10px;
 }
 
 .card_main {
@@ -300,7 +307,7 @@ button {
 .card_footer::before {
     content: '';
     display: block;
-    width: 320px;
+    width: auto;
     height: 4px;
     background-color: #eeeeee;
     margin: 20px 0 0 20px
@@ -309,12 +316,14 @@ button {
 .card_footer {
     color: #999999;
     font-size: 14px;
+
 }
 
 .footer_contents {
     padding: 16px 20px;
     display: flex;
     align-items: center;
+
 }
 
 .footer_text {
@@ -367,4 +376,9 @@ button {
     .card_text ul li::before {
         display: none;
     }
+
+    .card_footer::before {
+        width: calc( 100% - 40px );
+    }
+
 }
