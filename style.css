@@ -99,7 +99,7 @@ img {
     color: #C89DFF;
     font-size: 14px;
     line-height: 1.6em;
-    /* margin-right: 218px; */
+    
 }
 
 .card_wrapper {
@@ -107,7 +107,7 @@ img {
 
     display: grid;
     row-gap: 30px;
-    grid-template-rows: repeat( 3, 148px);
+    grid-template-rows: repeat( 3, minmax( 0, 1fr ));
 }
 
 .card {
