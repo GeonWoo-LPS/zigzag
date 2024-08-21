@@ -121,25 +121,27 @@ img {
     justify-content: space-between;
 }
 
-
-
-
 .card-img {
     position: relative;
 }
 
-.card-img div {
+.img-back {
     background-color: rgba(98, 48, 162, 0.5);
-    color: white;
-    font-size: 32px;
-    font-weight: 500;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    text-align: center;
-    line-height: 148px;
+}
+
+.img-back h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .card-img img {
@@ -196,10 +198,11 @@ img {
         flex-direction: column;
     }
 
-    .card-img div {
-    }
-
     .card-img img {
         width: 100%;
+    }
+
+    .card-text ul {
+        margin: 14px 21px 21px 22px;
     }
 }
