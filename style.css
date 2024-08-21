@@ -110,6 +110,7 @@ img {
     grid-template-rows: repeat( 3, minmax( 0, 1fr ));
 }
 
+
 .card {
     background-color: white;
     display: flex;
@@ -119,6 +120,9 @@ img {
     flex-direction: row-reverse;
     justify-content: space-between;
 }
+
+
+
 
 .card-img {
     position: relative;
@@ -174,4 +178,28 @@ img {
     border-radius: 50%;
     background-color: #C89DFF;
     margin-right: 14px;
+}
+
+@media ( max-width: 1024px ) {
+    .card_wrapper {
+        gap: 30px;
+        grid-template-columns: repeat( 2, minmax( 0, 1fr ));
+        grid-template-rows: repeat( auto-fit, minmax( 0, 1fr ));
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .card:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-img div {
+    }
+
+    .card-img img {
+        width: 100%;
+    }
 }
